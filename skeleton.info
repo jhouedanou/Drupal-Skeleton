@@ -28,7 +28,32 @@ regions[nav_global]          = Global Navigation
 regions[search]              = Search
 
 ; STYLESHEETS
-stylesheets[all][]           = _res/css/normalize.css
+; => Replace system CSS with blank files to override them. 
+stylesheets[all][]           = _res/css/overrides/colorbox_default_style.css
+stylesheets[all][]           = _res/css/overrides/comment.css
+stylesheets[all][]           = _res/css/overrides/contextual.css
+stylesheets[all][]           = _res/css/overrides/ctools.css
+stylesheets[all][]           = _res/css/overrides/field.css
+
+stylesheets[all][]           = _res/css/overrides/jquery.ui.core.css
+stylesheets[all][]           = _res/css/overrides/jquery.ui.theme.css
+stylesheets[all][]           = _res/css/overrides/media_youtube.css
+stylesheets[all][]           = _res/css/overrides/node.css
+stylesheets[all][]           = _res/css/overrides/overlay-parent.css
+stylesheets[all][]           = _res/css/overrides/overrides
+stylesheets[all][]           = _res/css/overrides/search.css
+stylesheets[all][]           = _res/css/overrides/shortcut.css
+
+stylesheets[all][]           = _res/css/overrides/system.base.css
+stylesheets[all][]           = _res/css/overrides/system.menus.css
+stylesheets[all][]           = _res/css/overrides/system.messages.css
+stylesheets[all][]           = _res/css/overrides/system.theme.css
+stylesheets[all][]           = _res/css/overrides/toolbar.css
+stylesheets[all][]           = _res/css/overrides/user.css
+stylesheets[all][]           = _res/css/overrides/views.css
+
+; => Theme custom CSS
+stylesheets[all][]           = _res/libs/normalize.css
 stylesheets[all][]           = _res/css/skeleton.css
 
 ; SCRIPTS
