@@ -43,6 +43,13 @@ div.tabs-main ul.tabs li a.active, div.tabs-action ul.tabs li a.active {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 /**
+ * Region demonstration view
+ */
+div.block-region {
+  background-color: transparent;
+  padding: 0 10px;
+}
+/**
  * Messaging boxes
  */
 div.messages {

@@ -107,9 +107,9 @@
           <?php print render($page['triptych_first']); ?>
         </div>
       <?php } ?>
-      <?php if ($page['triptych_second']) { ?>
+      <?php if ($page['triptych_middle']) { ?>
         <div class="triptych" id="triptych2">
-          <?php print render($page['triptych_second']); ?>
+          <?php print render($page['triptych_middle']); ?>
         </div>
       <?php } ?>
       <?php if ($page['triptych_last']) { ?>
@@ -137,9 +137,9 @@
             <?php print render($page['footer_thirdcolumn']); ?>
           </div>
         <?php } ?>
-        <?php if ($page['footer_thirdcolumn']) { ?>
+        <?php if ($page['footer_fourthcolumn']) { ?>
           <div class="pageFooterColumn" id="pageFooterColumn4">
-            <?php print render($page['footer_thirdcolumn']); ?>
+            <?php print render($page['footer_fourthcolumn']); ?>
           </div>
         <?php } ?>
       </div>

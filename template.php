@@ -8,12 +8,6 @@
  */
 
 /**
- * Helper functions are named with an initial underscore.
- * They are for completing special tasks and don't tie into the 
- * underlying Drupal core or theming APIs. 
- */
-
-/**
  * _na_include
  * 
  * Simplifies doing an include() to compensate for varying server 
@@ -33,4 +27,14 @@
  */
 function _na_include($filepath) {
   include($_SERVER['DOCUMENT_ROOT'] . base_path() . path_to_theme() . '/' . $filepath);
+}
+
+/**
+ * Implements theme_breadcrumb()
+ */
+function skeleton_breadcrumb(&$variables) {
+  $breadcrumb = $variables['breadcrumb'];
+  if (!empty($breadcrumb)) {
+    $output = implode(' &rarr; ', $breadcrumb);
+  }
 }
