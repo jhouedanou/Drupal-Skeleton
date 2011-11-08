@@ -18,6 +18,4 @@
  * @see template_preprocess_menu_block_wrapper()
  */
 ?>
-<nav id="<?php print $config['menu_name']; ?>" class="<?php print $classes; ?>">
-  <?php print render($content); ?>
-</nav>
+<?php print render($content); ?>

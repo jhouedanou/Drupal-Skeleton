@@ -1,6 +1,16 @@
 name        = Skeleton
 description = An HTML5 base theme for NavigationArts projects to extend from.
+engine      = phptemplate
 core        = 7.x
+screenshot  = screenshot.png
+
+; FEATURES
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = favicon
 
 ; REGIONS
 ; => Duplicate all the core regions from Bartik
@@ -36,7 +46,7 @@ stylesheets[all][]           = _res/css/overrides/jquery.ui.core.css
 stylesheets[all][]           = _res/css/overrides/jquery.ui.theme.css
 stylesheets[all][]           = _res/css/overrides/media_youtube.css
 stylesheets[all][]           = _res/css/overrides/node.css
-stylesheets[all][]           = _res/css/overrides/overlay-parent.css
+; stylesheets[all][]           = _res/css/overrides/overlay-parent.css
 stylesheets[all][]           = _res/css/overrides/search.css
 stylesheets[all][]           = _res/css/overrides/system.menus.css
 stylesheets[all][]           = _res/css/overrides/user.css
@@ -45,6 +55,7 @@ stylesheets[all][]           = _res/css/overrides/views.css
 ; => Theme custom CSS
 stylesheets[all][]           = _res/libs/normalize.css
 stylesheets[all][]           = _res/css/skeleton.css
+stylesheets[all][]           = _res/css/skeleton.helpers.css
 
 ; SCRIPTS
 scripts[]                    = _res/js/skeleton.js

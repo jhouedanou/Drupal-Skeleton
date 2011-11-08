@@ -5,12 +5,33 @@
   border-bottom:1px solid #999;
 }
 
+* { margin-top:0; }
+html, body {
+  background-color:#eee;
+  color:#333;
+  font-size:13px;
+}
+a {
+  color:#666;
+  text-decoration:none;
+  &:hover {
+    text-decoration:underline;
+  }
+}
+h1,h2,h3,h4,h5,h6,header {
+  font-weight:normal;
+  margin-bottom:1em;
+}
+
 #doc {
   .grid_container;
   .grid_fix;
-  background-color:#eee;
+  background-color:#fff;
+  border:10px solid #fff;
+  border-radius:10px;
+  margin-bottom:10px;
+  margin-top:10px;
 }
-
 #pageGlobal {
   .grid_12;
   .grid_fix;
@@ -18,36 +39,68 @@
   #pageGlobalNavigation {
     .grid_6;
     .grid_alpha;
-    background-color:#ddd;
+    nav {
+      ul {
+        .grid_fix;
+        margin:0;
+        padding:0;
+        li {
+          float:left;
+          margin-right:1em;
+          a {}
+        }
+      }
+    }
   }
   #pageGlobalSearch {
     .grid_6;
     .grid_omega;
-    background-color:#ddd;
   }
 }
 #pageHeader {
   .grid_12;
   .tier;
+  margin-bottom:0;
 }
 #pageNavigation {
   .grid_12;
   .tier;
+  nav {
+    ul {
+      .grid_fix;
+      margin:0;
+      padding:0;
+      li {
+        float:left;
+        list-style:none;
+        margin-right:1em;
+        a {
+          font-size:14px;
+          &:hover { color:#999; }
+          &.active, &.active-trail { color:#000; }
+        }
+      }
+    }
+  }
 }
 #highlighted {
   .grid_12;
   .tier;
+}
+#breadcrumb {
+  .grid_12;
+  font-size:11px;
+  padding-top:10px;
 }
 #pageBody {
   .grid_12;
   .tier;
   .rail {
     .grid_3;
-    background-color:#ddd;
   }
   #railLeft { .grid_alpha; }
   #railRight { .grid_omega; }
-  #contentMain { background-color:#ddd; }
+  #contentMain {}
 }
   .l1 #contentMain {
     .grid_12;
@@ -72,7 +125,6 @@
   .tier;
   .triptych {
     .grid_4;
-    background-color:#ddd;
   }
   #triptych1 { .grid_alpha; }
   #triptych2 {}
@@ -84,7 +136,6 @@
     .tier;
     .pageFooterColumn {
       .grid_3;
-      background-color:#ddd;
     }
     #pageFooterColumn1 { .grid_alpha; }
     #pageFooterColumn2 {}
@@ -95,4 +146,29 @@
     .grid_12;
     padding:10px 0;
   }
+}
+
+/**
+ * Blocks
+ */
+aside.block, nav.block {
+  background-color:rgba(255, 255, 255, 0.5);
+  border:1px solid rgba(255, 255, 255, 0.75);
+  border-radius:5px;
+  margin:10px;
+  padding:10px;
+  header {
+    font-weight:bold;
+    margin-bottom:1em;
+  }
+}
+
+/**
+ * Regions
+ */
+div.region {
+  background-color:rgba(0, 0, 0, 0.1);
+  border:1px solid rgba(0, 0, 0, 0.25);
+  border-radius:12px;
+  padding:1px 0;
 }

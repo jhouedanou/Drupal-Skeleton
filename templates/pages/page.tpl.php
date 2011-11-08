@@ -59,6 +59,9 @@
       <?php print render($page['highlighted']); ?>
     </div>
   <?php } ?>
+  <div id="breadcrumb">
+    <?php if ($breadcrumb) { print $breadcrumb; } ?>
+  </div>
   <section id="pageBody" class="<?php print $page_layout; ?>">
     <?php if ($page['sidebar_first']) { ?>
       <div id="railLeft" class="rail contentRelated">
@@ -70,28 +73,21 @@
         <?php print render($page['help']); ?>
         <?php if ($show_messages && $messages) { print $messages; } ?>
       <?php } ?>
-      <div id="breadcrumb">
-        <?php if ($breadcrumb) { print $breadcrumb; } ?>
-      </div>
       <?php if ($title) { ?><h1><?php print $title ?></h1><?php } ?>
       <!-- page actions for editors/administrators -->
       <?php if ($tabs) { ?>
         <div class="tabs-main">
-          <ul class="links clearfix">
-            <?php print render($tabs) ?>
-          </ul>
+          <?php print render($tabs) ?>
         </div>
       <?php } ?>
       <?php if ($action_links) { ?>
         <div class="tabs-actions">
-          <ul class="links clearfix">
-            <?php print render($action_links); ?>
-          </ul>
+          <?php print render($action_links); ?>
         </div>
       <?php } ?>
       <!-- end of page actions for editors/administrators -->
       <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
+      <?php /* print $feed_icons; */ ?>
     </div>
     <?php if ($page['sidebar_second']){ ?>
       <div id="railRight" class="rail contentRelated">

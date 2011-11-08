@@ -1,0 +1,80 @@
+/** 
+ * Page control tabs
+ * (edit content, etc.)
+ */
+div.tabs-main, div.tabs-action {
+  ul.tabs {
+    margin:0 0 20px;
+    padding:0;
+    zoom:1;
+    &:after {
+    	content: ".";
+    	display: block;
+    	clear: both;
+    	visibility: hidden;
+    	line-height: 0;
+    	height: 0;
+    }
+    li {
+      float:left;
+      list-style:none;
+      margin:0 10px 0 0;
+      padding:0;
+      a {
+        background-color:rgba(0, 0, 0, 0.1);
+        border:1px solid rgba(0, 0, 0, 0.3);
+        border-radius:12px;
+        color:#666;
+        display:inline-block;
+        font-size:11px;
+        height:24px;
+        line-height:26px;
+        padding:0 10px;
+        text-decoration:none;
+        text-shadow:0 1px 0 rgba(255, 255, 255, 0.4);
+        &:hover {
+          color:#000;
+          text-shadow:0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+        &.active {
+          color:#333;
+          box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Messaging boxes
+ */
+div.messages {
+  border-radius:5px;
+  position:relative;
+  span.closer {
+    background-color:#fff;
+    border-radius:16px;
+    border-style:solid;
+    border-width:1px;
+    box-shadow:0 1px 0 rgba(0, 0, 0, 0.5);
+    cursor:pointer;
+    font-size:10px;
+    height:16px;
+    line-height:16px;
+    margin:0;
+    opacity:0;
+    overflow:hidden;
+    padding:0;
+    position:absolute;
+    right:5px;
+    text-align:center;
+    top:5px;
+    width:16px;
+    -webkit-transition:opacity 0.5s linear;
+  }
+  &:hover {
+    span.closer {
+      opacity:1;
+    }
+  }
+}
