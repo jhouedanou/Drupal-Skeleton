@@ -171,13 +171,29 @@ div.region {
   border:1px solid rgba(0, 0, 0, 0.25);
   border-radius:12px;
   padding:1px 0;
+  position:relative;
+  a.context-block-region {
+    background-color:#999;
+    bottom:100%;
+    border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    color:#fff;
+    display:none;
+    font-size:10px;
+    padding:3px 10px;
+    position:absolute;
+    text-decoration:none;
+    right:0;
+  }
+  &:hover:not(.region-content) {
+    border-top-right-radius:0;
+    a.context-block-region {
+      display:block;
+    }
+  }
 }
 
 /**
  * Appearance
  */
-div.file-video {
-  height:300px;
-  margin:0 auto;
-  width:400px;
-}
+div.file-video {}

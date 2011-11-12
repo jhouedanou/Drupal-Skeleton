@@ -1,11 +1,13 @@
 <?php if ($page) { /* page display */ ?>
 
   <article id="node-<?php print $node->nid; ?>" class="node node-full node-<?php print $node->type; ?>">
-    <?php if ($title) { ?>
-      <div class="header">
-        <?php print $title ?>
-      </div>
+    <?php /*
+      <?php if ($title) { ?>
+        <header class="node-header">
+          <?php print $title ?>
+        </header>
     <?php } ?>
+    */ ?>
     <?php if ($content) { ?>
       <section class="node-content">
         <?php print render($content) ?>
@@ -17,9 +19,9 @@
 
   <article id="node-<?php print $node->nid; ?>" class="node node-teaser node-<?php print $node->type; ?>">
     <?php if ($title) { ?>
-      <div class="header">
+      <header class="node-header">
         <a href="<?php print $node_url ?>"><?php print $title ?></a>
-      </div>
+      </header>
     <?php } ?>
     <?php if ($content) { ?>
       <section class="node-content">
