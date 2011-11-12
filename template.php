@@ -38,3 +38,12 @@ function skeleton_breadcrumb(&$variables) {
     $output = implode(' &rarr; ', $breadcrumb);
   }
 }
+
+/**
+ * Implements theme_preprocess_page()
+ */
+function skeleton_preprocess_page(&$variables) {
+  if (!empty($variables['page']['sidebar_second_custom'])) {
+    $variables['page']['sidebar_second'] = $variables['page']['sidebar_second_custom'];
+  } 
+}

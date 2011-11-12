@@ -36,6 +36,8 @@ regions[nav_main]            = Main Navigation
 regions[nav_global]          = Global Navigation
 ; => Custom region for Search Block
 regions[search]              = Search
+; => Custom right rail block assignment region
+regions[sidebar_second_custom] = Custom right rail content
 
 ; STYLESHEETS
 ; => Replace system CSS with blank files to override them. 
