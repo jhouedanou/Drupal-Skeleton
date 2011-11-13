@@ -66,18 +66,52 @@ h1,h2,h3,h4,h5,h6,header {
   .grid_12;
   .tier;
   nav {
-    ul {
+    ul.menu {
       .grid_fix;
       margin:0;
       padding:0;
+      position:relative;
       li {
+        display:inline-block;
         float:left;
         list-style:none;
         margin-right:1em;
+        position:relative;
         a {
           font-size:14px;
           &:hover { color:#999; }
           &.active, &.active-trail { color:#000; }
+        }
+        ul.menu {
+          background-color:#f0f0f0;
+          border:1px solid #999;
+          border-top-style:none;
+          border-bottom-right-radius:5px;
+          border-bottom-left-radius:5px;
+          left:-6px;
+          margin:3px 0 0;
+          opacity:0;
+          padding:0 5px;
+          position:absolute;
+          top:100%;
+          width:100%;
+          z-index:10;
+          -webkit-transition-duration:0.5s;
+          li {
+            display:block;
+            float:none;
+            margin-right:0;
+            a {
+              display:block;
+              font-size:0.9em;
+              padding:5px 0;
+            }
+          }
+        }
+        &:hover {
+          ul {
+            opacity:1;
+          }
         }
       }
     }
@@ -149,15 +183,15 @@ h1,h2,h3,h4,h5,h6,header {
 }
 
 /**
- * Blocks
+ * Blocks and faux-blocks from Panels.
  */
-aside.block, nav.block {
+aside.block, nav.block, div.region div.panel-pane {
   background-color:rgba(255, 255, 255, 0.5);
   border:1px solid rgba(255, 255, 255, 0.75);
   border-radius:5px;
   margin:10px;
   padding:10px;
-  header {
+  header, div.panel-header {
     font-weight:bold;
     margin-bottom:1em;
   }
@@ -191,7 +225,7 @@ div.region {
   }
 }
 body.logged-in {
-  div.region {
+  div.region:not(.panel-region) {
     &:hover {
       border-top-right-radius:0;
       a.context-block-region {
@@ -216,15 +250,41 @@ body.node-type-panel {
   }
   div.tabs-main {
     .grid_12;
+    padding-top:10px;
+  }
+}
+#contentMain div.panel-pane {
+  div.panel-header {
+    font-size:26px;
+    margin-bottom:1em;
   }
 }
 // HOMEPAGE
-#homepage {}
+#homepage {
+  .grid_12;
+  .grid_fix;
+  padding-top:10px;
+  div.panel-pane {
+    background-color:rgba(0, 0, 0, 0.1);
+    border:1px solid rgba(0, 0, 0, 0.25);
+    border-radius:10px;
+    margin-bottom:10px;
+    padding:10px;
+    div.panel-header {
+      font-size:18px;
+      margin-bottom:1em;
+    }
+  }
+}
   #homepageTop {
     .grid_12;
+    .grid_alpha;
+    .grid_omega;
   }
   #homepageBottom {
     .grid_12;
+    .grid_alpha;
+    .grid_omega;
     .grid_fix;
     div.homepageBottom { .grid_4; }
     #homepageBottom1 { .grid_alpha;}

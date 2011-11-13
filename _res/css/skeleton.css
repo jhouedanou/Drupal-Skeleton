@@ -410,12 +410,13 @@ header {
   padding: 10px 0;
   border-bottom: 1px solid #999;
 }
-#pageNavigation nav ul {
+#pageNavigation nav ul.menu {
   zoom: 1;
   margin: 0;
   padding: 0;
+  position: relative;
 }
-#pageNavigation nav ul:after {
+#pageNavigation nav ul.menu:after {
   content: ".";
   display: block;
   clear: both;
@@ -423,19 +424,50 @@ header {
   line-height: 0;
   height: 0;
 }
-#pageNavigation nav ul li {
+#pageNavigation nav ul.menu li {
+  display: inline-block;
   float: left;
   list-style: none;
   margin-right: 1em;
+  position: relative;
 }
-#pageNavigation nav ul li a {
+#pageNavigation nav ul.menu li a {
   font-size: 14px;
 }
-#pageNavigation nav ul li a:hover {
+#pageNavigation nav ul.menu li a:hover {
   color: #999;
 }
-#pageNavigation nav ul li a.active, #pageNavigation nav ul li a.active-trail {
+#pageNavigation nav ul.menu li a.active, #pageNavigation nav ul.menu li a.active-trail {
   color: #000;
+}
+#pageNavigation nav ul.menu li ul.menu {
+  background-color: #f0f0f0;
+  border: 1px solid #999;
+  border-top-style: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  left: -6px;
+  margin: 3px 0 0;
+  opacity: 0;
+  padding: 0 5px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition-duration: 0.5s;
+}
+#pageNavigation nav ul.menu li ul.menu li {
+  display: block;
+  float: none;
+  margin-right: 0;
+}
+#pageNavigation nav ul.menu li ul.menu li a {
+  display: block;
+  font-size: 0.9em;
+  padding: 5px 0;
+}
+#pageNavigation nav ul.menu li:hover ul {
+  opacity: 1;
 }
 #highlighted {
   display: inline;
@@ -571,16 +603,21 @@ header {
   padding: 10px 0;
 }
 /**
- * Blocks
+ * Blocks and faux-blocks from Panels.
  */
-aside.block, nav.block {
+aside.block, nav.block, div.region div.panel-pane {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
 }
-aside.block header, nav.block header {
+aside.block header,
+nav.block header,
+div.region div.panel-pane header,
+aside.block div.panel-header,
+nav.block div.panel-header,
+div.region div.panel-pane div.panel-header {
   font-weight: bold;
   margin-bottom: 1em;
 }
@@ -612,10 +649,10 @@ div.region a.context-block-region {
   text-decoration: none;
   right: -1px;
 }
-body.logged-in div.region:hover {
+body.logged-in div.region:not(.panel-region):hover {
   border-top-right-radius: 0;
 }
-body.logged-in div.region:hover a.context-block-region {
+body.logged-in div.region:not(.panel-region):hover a.context-block-region {
   display: block;
 }
 /**
@@ -638,6 +675,39 @@ body.node-type-panel div.tabs-main {
   margin-left: 10px;
   margin-right: 10px;
   width: 940px;
+  padding-top: 10px;
+}
+#contentMain div.panel-pane div.panel-header {
+  font-size: 26px;
+  margin-bottom: 1em;
+}
+#homepage {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 940px;
+  zoom: 1;
+  padding-top: 10px;
+}
+#homepage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#homepage div.panel-pane {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+#homepage div.panel-pane div.panel-header {
+  font-size: 18px;
+  margin-bottom: 1em;
 }
 #homepageTop {
   display: inline;
@@ -645,6 +715,8 @@ body.node-type-panel div.tabs-main {
   margin-left: 10px;
   margin-right: 10px;
   width: 940px;
+  margin-left: 0;
+  margin-right: 0;
 }
 #homepageBottom {
   display: inline;
@@ -652,6 +724,8 @@ body.node-type-panel div.tabs-main {
   margin-left: 10px;
   margin-right: 10px;
   width: 940px;
+  margin-left: 0;
+  margin-right: 0;
   zoom: 1;
 }
 #homepageBottom:after {

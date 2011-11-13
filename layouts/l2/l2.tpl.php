@@ -6,7 +6,7 @@
 ?>
 <section id="pageBody" class="l2">
   <div id="railLeft" class="rail contentRelated">
-    <div class="region region-sidebar-first">
+    <div class="region region-sidebar-first panel-region">
       <?php print $content['sidebar_first']; ?>
     </div>
   </div>

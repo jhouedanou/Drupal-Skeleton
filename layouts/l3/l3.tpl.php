@@ -9,7 +9,7 @@
     <?php print $content['content']; ?>
   </div>
   <div id="railRight" class="rail contentRelated">
-    <div class="region region-sidebar-second">
+    <div class="region region-sidebar-second panel-region">
       <?php print $content['sidebar_second']; ?>
     </div>
   </div>
