@@ -14,6 +14,7 @@
 * [Context](http://drupal.org/project/context) (and the Context_Layout submodule that is included in it)
   * [Context_Node](http://drupal.org/project/context_node)
   * [Context_Menu_Block](http://drupal.org/project/context_menu_block)
+* Your project-specific sub-theme.
 
 ## Includes support for...
 
@@ -27,8 +28,9 @@
 ## Todo
 
 * Make a sub-theme toolkit/starter
-* Drush/Rake sub-theme starter tool
+* Drush/Rake sub-theme starter generator tool
 
 ## Changelog...
 
-2011-11-12: MR - Still getting things started. Panels in place but still a little rough. 
+* 2011-11-12: MR - Still getting things started. Panels in place but still a little rough. 
+* 2011-11-13: MR - Panels stuff should be mostly set at this point. Added support for dropdown menus as part of main navigation.
