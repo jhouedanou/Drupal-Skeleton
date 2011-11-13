@@ -172,6 +172,10 @@ div.region {
   border-radius:12px;
   padding:1px 0;
   position:relative;
+  /**
+   * a.context-block-region is added to regions by the context module while
+   * a user is logged in. 
+   */
   a.context-block-region {
     background-color:#999;
     bottom:100%;
@@ -183,12 +187,16 @@ div.region {
     padding:3px 10px;
     position:absolute;
     text-decoration:none;
-    right:0;
+    right:-1px;
   }
-  &:hover:not(.region-content) {
-    border-top-right-radius:0;
-    a.context-block-region {
-      display:block;
+}
+body.logged-in {
+  div.region {
+    &:hover {
+      border-top-right-radius:0;
+      a.context-block-region {
+        display:block;
+      }
     }
   }
 }
@@ -197,3 +205,29 @@ div.region {
  * Appearance
  */
 div.file-video {}
+
+/**
+ * Panels
+ */
+body.node-type-panel {
+  #panelHelp { 
+    .grid_12;
+    margin-bottom:10px;
+  }
+  div.tabs-main {
+    .grid_12;
+  }
+}
+// HOMEPAGE
+#homepage {}
+  #homepageTop {
+    .grid_12;
+  }
+  #homepageBottom {
+    .grid_12;
+    .grid_fix;
+    div.homepageBottom { .grid_4; }
+    #homepageBottom1 { .grid_alpha;}
+    #homepageBottom2 {}
+    #homepageBottom3 { .grid_omega;}
+  }

@@ -593,6 +593,11 @@ div.region {
   border-radius: 12px;
   padding: 1px 0;
   position: relative;
+  /**
+   * a.context-block-region is added to regions by the context module while
+   * a user is logged in. 
+   */
+
 }
 div.region a.context-block-region {
   background-color: #999;
@@ -605,14 +610,68 @@ div.region a.context-block-region {
   padding: 3px 10px;
   position: absolute;
   text-decoration: none;
-  right: 0;
+  right: -1px;
 }
-div.region:hover:not(.region-content) {
+body.logged-in div.region:hover {
   border-top-right-radius: 0;
 }
-div.region:hover:not(.region-content) a.context-block-region {
+body.logged-in div.region:hover a.context-block-region {
   display: block;
 }
 /**
  * Appearance
  */
+/**
+ * Panels
+ */
+body.node-type-panel #panelHelp {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 940px;
+  margin-bottom: 10px;
+}
+body.node-type-panel div.tabs-main {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 940px;
+}
+#homepageTop {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 940px;
+}
+#homepageBottom {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 940px;
+  zoom: 1;
+}
+#homepageBottom:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#homepageBottom div.homepageBottom {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 300px;
+}
+#homepageBottom #homepageBottom1 {
+  margin-left: 0;
+}
+#homepageBottom #homepageBottom3 {
+  margin-right: 0;
+}

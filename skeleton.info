@@ -61,3 +61,6 @@ stylesheets[all][]           = _res/css/skeleton.helpers.css
 
 ; SCRIPTS
 scripts[]                    = _res/js/skeleton.js
+
+; PANELS
+plugins[panels][layouts] = layouts
