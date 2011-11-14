@@ -83,11 +83,12 @@ h1,h2,h3,h4,h5,h6,header {
           &.active, &.active-trail { color:#000; }
         }
         ul.menu {
-          background-color:#f0f0f0;
+          background-color:#f3f3f3;
           border:1px solid #999;
           border-top-style:none;
           border-bottom-right-radius:5px;
           border-bottom-left-radius:5px;
+          box-shadow:0 1px 1px rgba(0, 0, 0, 0.4);
           left:-6px;
           margin:3px 0 0;
           opacity:0;
@@ -117,6 +118,20 @@ h1,h2,h3,h4,h5,h6,header {
     } // #pageNavigation nav ul.menu
   } // #pageNavigation nav
 } // #pageNavigation
+  /**
+   * Identify menu items that contain dropdowns
+   */
+  #pageNavigation nav > div > ul.menu > li.expanded > a:after {
+    content:'+';
+    display:inline-block;
+    font-size:10px;
+    line-height:14px;
+    text-align:right;
+    text-decoration:none;
+    width:16px;
+  }
+  #pageNavigation nav > div > ul.menu > li.expanded:hover > a:after { content:'-'; }
+
 #highlighted {
   .grid_12;
   .tier;
@@ -239,6 +254,22 @@ body.logged-in {
  * Appearance
  */
 div.file-video {}
+
+/**
+ * NODE display
+ */
+article.node-teaser {
+  border-bottom:1px solid #ccc;
+  margin-bottom:10px;
+  header {
+    font-size:18px;
+  }
+}
+article.node-full {
+  section.node-content {
+    img { max-width:100%; }
+  }
+}
 
 /**
  * Panels
